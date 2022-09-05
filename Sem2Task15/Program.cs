@@ -6,18 +6,23 @@
 
 //Считываем данные
 Console.Write("Введите число: ");
-string? inputLine = Console.ReadLine();
-//проверка на пустое значение
-if (inputLine != null)
-{   // присваиваем вещественное значение
-    int inputNumber = int.Parse(inputLine);
+string? inputLine = Console.ReadLine() ?? "";
+// присваиваем вещественное значение
+int inputNumber = int.Parse(inputLine);
+if (inputNumber > 7 || inputNumber < 1)
+{
+    Console.WriteLine("Такого дня нет");
+}
+else
+{
     if (inputNumber == 6 || inputNumber == 7)
     {
         //вывод данных
         Console.WriteLine("Выходной день");
     }
     else
-    {   //вывод при невыполнении условия 
-        Console.Write("Будний день");
+    {
+        //вывод при невыполнении условия 
+        Console.WriteLine("Будний день");
     }
 }
