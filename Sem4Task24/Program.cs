@@ -23,6 +23,13 @@ int VariantSumSimple(int numA)
     return sumOfNumbers;
 }
 
+int VariantSumGausse(int numA)
+{
+    int sumOfNumbers = 0;
+    sumOfNumbers = ((numA + 1) * numA) / 2;
+    return sumOfNumbers;
+}
+
 void PrintResult(string line)
 
 {
@@ -30,7 +37,16 @@ void PrintResult(string line)
 }
 
 int numberA = ReadData("Введите число: ");
-int res = VariantSumSimple(numberA);
-PrintResult("Сумма чисел от 1 до введенного числа равна: " +res);
+
+DateTime d1 = DateTime.Now;
+int res1 = VariantSumSimple(numberA);
+Console.WriteLine(DateTime.Now - d1);
+
+DateTime d2 = DateTime.Now;
+int res2 = VariantSumGausse(numberA);
+Console.WriteLine(DateTime.Now - d2);
+
+PrintResult("Сумма чисел от 1 до введенного числа равна(простой метод): " + res1);
+PrintResult("Сумма чисел от 1 до введенного числа равна(метод Гаусса): " + res2);
 
 
