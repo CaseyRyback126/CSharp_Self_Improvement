@@ -16,16 +16,16 @@ int CalculateDigits(int num)
     return (int)(Math.Log10(num) + 1);
 }
 
-int SumDigit(int num)
-{
-    int sum = 0;
-    while (num > 0)
-    {
-        sum += num % 10;
-        num = num / 10;
-    }
-    return sum;
-}
+// int SumDigit(int num)
+// {
+//     int sum = 0;
+//     while (num > 0)
+//     {
+//         sum += num % 10;
+//         num = num / 10;
+//     }
+//     return sum;
+// }
 
 int DigitCount(int num)
 {
