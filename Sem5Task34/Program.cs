@@ -24,12 +24,31 @@ int[] FillArray(int arrLength, int downBorder, int topBorder)
 
 int CounterEven(int[] arr)
 {
-    int countEven = 0;
+    int countEv = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] % 2 == 0) countEven++;
+        if (arr[i] % 2 == 0) countEv++;
     }
-    return countEven;
+    return countEv;
+}
+
+// Метод сортировки пузырьком.
+int[] BubbleSort(int[] arr)
+{
+    for (int i = 1; i < arr.Length; i++)
+    {
+        for (int j = 0; j < arr.Length - i; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                int temp;
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
 }
 
 void Print1DArray(int[] array)
@@ -42,6 +61,7 @@ void PrintCountEven(int line)
     Console.WriteLine(line);
 }
 
-int[] array = FillArray(12, 100, 999);
+int[] array = FillArray(12, 100, 1000);
 Print1DArray(array);
 PrintCountEven(CounterEven(array));
+Print1DArray(BubbleSort(array));
