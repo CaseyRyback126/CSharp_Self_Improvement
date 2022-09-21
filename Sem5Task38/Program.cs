@@ -8,7 +8,7 @@
 
 
 // Генерация случайного массива.
-double[] GenArr(int arrLen, double minValue, double maxValue)
+double[] GenArr(int arrLen, int minValue, int maxValue)
 {
     double[] arr = new double[arrLen];
     Random rnd = new Random();
@@ -34,7 +34,11 @@ double MaxMinDifference(double[] arr)
 //Вывод массива.
 void PrintArray(double[] array)
 {
-    Console.WriteLine("[{0:N2}]", string.Join(", ", array));
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{Math.Round(array[i], 2)}\t");
+    }
+    
 }
 //Вывод результата.
 void PrintResult(string line)
@@ -44,4 +48,5 @@ void PrintResult(string line)
 
 double[] range = GenArr(15, 10, 100);
 PrintArray(range);
-PrintResult("Разница между максимальным и мнимальным элементом массива равна: " + MaxMinDifference(range));
+PrintResult("Разница между максимальным и мнимальным элементом массива равна: " 
++ MaxMinDifference(range));
